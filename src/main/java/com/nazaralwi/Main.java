@@ -38,4 +38,17 @@ public class Main {
 
         return data;
     }
+
+    private static int[] insertionSort(int[] data) {
+        int temp, j;
+        for (int i = 0; i < data.length; i++) {
+            temp = data[i];
+            j = i;
+            while ((j > 0) && (data[j-1] > temp)) {
+                data[j] = data[j-1];
+                j--;
+            }
+        }
+        return data;
+    }
 }
