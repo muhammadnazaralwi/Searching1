@@ -1,8 +1,13 @@
 package com.nazaralwi;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-
+        int[] data = {2, 6, 4, 2, 7, 10, 4, 55, 192};
+        System.out.println(Arrays.toString(bubbleSort(data)));
+        System.out.println(Arrays.toString(selectionSort(data)));
+        System.out.println(Arrays.toString(insertionSort(data)));
     }
 
     private static int[] bubbleSort(int[] data) {
