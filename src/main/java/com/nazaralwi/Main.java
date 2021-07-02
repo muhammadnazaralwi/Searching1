@@ -18,4 +18,24 @@ public class Main {
         }
         return data;
     }
+
+    private static int[] selectionSort(int[] data) {
+        int pos, temp;
+        for (int i = 0; i < data.length; i++) {
+            pos = i;
+            for (int j = i + 1; j < data.length; j++) {
+                if (data[j] < data[pos]) {
+                    pos = j;
+                }
+            }
+
+            if (pos != i) {
+                temp = data[pos];
+                data[pos] = data[i];
+                data[i] = temp;
+            }
+        }
+
+        return data;
+    }
 }
