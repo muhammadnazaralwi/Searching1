@@ -29,7 +29,7 @@ public class Main {
         System.out.println(Arrays.toString(insertionSort(data)));
     }
 
-    private static LinkedList<Integer> bubbleSort(LinkedList<Integer> data) {
+    private static void bubbleSort(LinkedList<Integer> data) {
         int temp;
         for (int i = 1; i < data.size(); i++) {
             for (int j = data.size() - 1; j >= i ; j--) {
@@ -40,10 +40,9 @@ public class Main {
                 }
             }
         }
-        return data;
     }
 
-    private static LinkedList<Integer> selectionSort(LinkedList<Integer> data) {
+    private static void selectionSort(LinkedList<Integer> data) {
         int pos, temp;
         for (int i = 0; i < data.size(); i++) {
             pos = i;
@@ -60,10 +59,9 @@ public class Main {
             }
         }
 
-        return data;
     }
 
-    private static LinkedList<Integer> insertionSort(LinkedList<Integer> data) {
+    private static void insertionSort(LinkedList<Integer> data) {
         int temp, j;
         for (int i = 0; i < data.size(); i++) {
             temp = data.get(i);
@@ -74,7 +72,6 @@ public class Main {
             }
             data.set(j, temp);
         }
-        return data;
     }
 
     private static int[] bubbleSort(int[] data) {
