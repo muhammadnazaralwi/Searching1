@@ -84,6 +84,7 @@ public class Main {
                 data[j] = data[j-1];
                 j--;
             }
+            data[j] = temp;
         }
         return data;
     }
