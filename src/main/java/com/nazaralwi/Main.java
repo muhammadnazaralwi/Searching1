@@ -20,6 +20,7 @@ public class Main {
         System.out.println("Linked List");
         bubbleSort(list);
         selectionSort(list);
+        insertionSort(list);
         System.out.println(Arrays.toString(list.toArray()));
 
         System.out.println("\nArray");
@@ -59,6 +60,20 @@ public class Main {
             }
         }
 
+        return data;
+    }
+
+    private static LinkedList<Integer> insertionSort(LinkedList<Integer> data) {
+        int temp, j;
+        for (int i = 0; i < data.size(); i++) {
+            temp = data.get(i);
+            j = i;
+            while ((j > 0) && (data.get(j - 1) > temp)) {
+                data.set(j, data.get(j - 1));
+                j--;
+            }
+            data.set(j, temp);
+        }
         return data;
     }
 
