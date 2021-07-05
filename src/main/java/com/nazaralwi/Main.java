@@ -19,6 +19,7 @@ public class Main {
 
         System.out.println("Linked List");
         bubbleSort(list);
+        selectionSort(list);
         System.out.println(Arrays.toString(list.toArray()));
 
         System.out.println("\nArray");
@@ -38,6 +39,26 @@ public class Main {
                 }
             }
         }
+        return data;
+    }
+
+    private static LinkedList<Integer> selectionSort(LinkedList<Integer> data) {
+        int pos, temp;
+        for (int i = 0; i < data.size(); i++) {
+            pos = i;
+            for (int j = i + 1; j < data.size(); j++) {
+                if (data.get(j) < data.get(pos)) {
+                    pos = j;
+                }
+            }
+
+            if (pos != i) {
+                temp = data.get(pos);
+                data.set(pos, data.get(i));
+                data.set(i, temp);
+            }
+        }
+
         return data;
     }
 
