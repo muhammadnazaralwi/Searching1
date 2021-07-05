@@ -1,13 +1,44 @@
 package com.nazaralwi;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
         int[] data = {2, 6, 4, 2, 7, 10, 4, 55, 192};
+        LinkedList<Integer> list = new LinkedList<>();
+        list.add(2);
+        list.add(6);
+        list.add(4);
+        list.add(2);
+        list.add(7);
+        list.add(10);
+        list.add(4);
+        list.add(55);
+        list.add(192);
+
+        System.out.println("Linked List");
+        bubbleSort(list);
+        System.out.println(Arrays.toString(list.toArray()));
+
+        System.out.println("\nArray");
         System.out.println(Arrays.toString(bubbleSort(data)));
         System.out.println(Arrays.toString(selectionSort(data)));
         System.out.println(Arrays.toString(insertionSort(data)));
+    }
+
+    private static LinkedList<Integer> bubbleSort(LinkedList<Integer> data) {
+        int temp;
+        for (int i = 1; i < data.size(); i++) {
+            for (int j = data.size() - 1; j >= i ; j--) {
+                if (data.get(j) < data.get(j - 1)) {
+                    temp = data.get(j);
+                    data.set(j, data.get(j - 1));
+                    data.set(j - 1, temp);
+                }
+            }
+        }
+        return data;
     }
 
     private static int[] bubbleSort(int[] data) {
